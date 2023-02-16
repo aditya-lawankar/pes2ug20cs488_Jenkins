@@ -3,13 +3,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                shell 'g++ -o pes2ug20cs488-1 task5.cpp'
+                sh 'g++ -o pes2ug20cs488-1 task5.cpp'
                 echo "Build Successful"
             }
         }
         stage('Test') {
             steps {
                 sh './pes2ug20cs488-1'
+                sdubcold
             }
         }
         stage('Deploy') {
